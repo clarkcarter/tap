@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Feature, GeoJSONLayer } from "react-mapbox-gl";
 import { Sidebar, Tab } from 'react-leaflet-sidebarv2';
 import './App.css';
 
@@ -7,7 +7,6 @@ import './App.css';
 const Map = ReactMapboxGl({
   accessToken: "pk.eyJ1IjoiY2xhcmtjYXJ0ZXIiLCJhIjoiY2lncTBtNjMyMDFvNHY2a29rOWdtY2RwaCJ9.TX02M_EHzs8lUyUacPrOdQ"
 });
-
 
 class App extends React.Component {
   constructor(props) {
@@ -41,16 +40,16 @@ class App extends React.Component {
           </Tab>
         </Sidebar>
         <Map
-          style="mapbox://styles/mapbox/streets-v9"
+          style="mapbox://styles/clarkcarter/cj9j4jh3ybgx42ss2qu1sse72"
           containerStyle={{
             height: "100vh",
             width: "100vw"
-        }}>
+          }}
+          zoom={[1]}>
           <Layer
             type="symbol"
-            id="marker"
-            layout={{ "icon-image": "marker-15" }}>
-            <Feature coordinates={[-0.481747846041145, 51.3233379650232]}/>
+            layout={{ "icon-image": "mountain-15" }}>
+            <Feature coordinates={[151.2093,-33.8688]}/>
           </Layer>
         </Map>
       </div>
